@@ -7,25 +7,25 @@
 * new AntyLogoutAPI(plugin); - Tworzenie APi dla pluginu
 
 * Gracz jest w PVP
-* .inPVP(player) - return boolean
+  * .inPVP(player) - return boolean
 
 * Tworzenie PVP
-* .createPVP(player, time) - return boolean
+  * .createPVP(player, time) - return boolean
 
 * Tworzenie actionbara
-* .createActionbar(text) - return actionbar
+  * .createActionbar(text) - return actionbar
 
 * Wysylanie actionbara do gracza
-* .sendActionBar(actionbar, player) - void
+  * .sendActionBar(actionbar, player) - void
 
 * Wysylanie actionbara do wszystkich graczy
-* .sendActionBarAll(actionbar, null) - void
+  * .sendActionBarAll(actionbar, null) - void
 
 * Pobieranie pozostalego graczu PVP
-* .getLeftTime(pvp) - return double
+  * .getLeftTime(pvp) - return double
 
 * Pobieranie PVP
-* .getPVP(uuid) - return pvp
+  * .getPVP(uuid) - return pvp
 
 * .toString() - return string
 
