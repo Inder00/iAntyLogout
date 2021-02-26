@@ -1,0 +1,7 @@
+name: iAntyLogout
+version: 1.4.3
+authors: [Inder00]
+main: pl.inder00.antylogout.AntyLogout
+commands:
+  antylogout:
+    description: Antylogout

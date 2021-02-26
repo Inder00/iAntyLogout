@@ -1,0 +1,130 @@
+################
+#
+# iAntyLogout
+# Autor: Inder00
+# Wersja: 1.4.3
+#
+################
+
+
+##########################################################################
+# Czy event PlayerMoveEvent ma byc wlaczony ? ( Odpowiada za zablokowania wejscia na spawn podczas walki )
+event-move: false
+
+# Koordynaty spawnu
+spawn:
+  min:
+    x: -10
+    z: 10
+  max:
+    x: 10
+    z: -10
+##########################################################################
+
+##########################################################################
+# Czas, jaki ma trwac anty-logout
+antylogout-time: 15
+##########################################################################
+
+##########################################################################
+# Wiadomosc, gdy nie mozemy wykonac tej komendy
+cannot-use-commands: '&8» &cNie mozesz wykonywac komend podczas walki z wyjatkiem /antylogout.'
+##########################################################################
+
+##########################################################################
+# Wiadomosc, gdy gracz wyloguje sie podczas walki
+######## Zmienne: ########
+# {PLAYER} - Nick gracza, który sie wylogował
+# {HEALTH} - Ilość HP
+# {X} - X
+# {Y} - Y
+# {Z} - Z
+# {LEFTTIME} - Pozostaly czas anty-logout
+#
+###########################
+broadcast-logout: '&8» &7Gracz &e{PLAYER} ({HEALTH}) &7wylogowal sie podcas &ewalki!'
+##########################################################################
+
+##########################################################################
+# Lista zezwolonych komend
+allowed-commands:
+- 'antylogout'
+##########################################################################
+
+##########################################################################
+# Zablokowac bicie na Gamemode.CREATIVE?
+block-gamemode-CREATIVE: true
+
+# Wiadomosc, gdy jest bijemy na Gamemode.CREATIVE
+hit-gamemode-CREATIVE: '&cBicie innych graczy, jest zablokowane na CREATIVE'
+##########################################################################
+
+##########################################################################
+# Wiadomosc komendy /antylogout
+######## Zmienne: ########
+# {PLAYER} - Nick gracza, który sie wylogował
+# {LEFTTIME} - Pozostaly czas anty-logout
+# {CANLOGOUT} - Czy gracz moze sie wylogowac ? TAK / NIE 
+###########################
+antylogout:
+- '&8&m---------------------'
+- '&7Mozliwosc wylogowania sie: &e{CANLOGOUT}&7. Pozostaly czas &eANTY-LOGOUT&7: &e{LEFTTIME}sek.'
+- '&8&m---------------------'
+##########################################################################
+
+##########################################################################
+# Wiadomosc, gdy jestes podczas walki
+combat-player: '&8» &7Jestes podczas walki, nie wylogowuj sie!'
+
+# Wiaodomosc, gdy gracz nie jest juz podczas walki
+safe-player: '&8» &aJestes juz bezpieczny, mozesz sie wylogowac.'
+##########################################################################
+
+##########################################################################
+# Wiadomosc, na actionbarze, gdy nie mozemy sie wylogowac
+######## Zmienne: ########
+# {LEFTTIME} - Pozostaly czas anty-logout
+###########################
+cannot-logout-actionbar: '&8* &7Jestes podczas &ewalki&7, nie wylogowuj sie! (&e{LEFTTIME}&7) &8*'
+
+# Wiadomosc, na actionbarze, gdy mozemy juz sie wylogowac
+can-logout-actionbar: '&8* &aJestes juz bezpieczny, mozesz sie wylogowac &8*'
+##########################################################################
+
+##########################################################################
+# Czy event BlockPlaceEvent ma byc wlaczony ? ( Odpowiada za blokowanie stawiania blokow podcas pvp )
+event-build: true
+
+# Wysokosc, ponizej ktorej nie mozna budowac
+max-y-build: 50
+
+# Wiadomosc, gdy gracz nie moze postawic bloku, z powodu zbyt niskiego Y
+cannot-build-here: '&cNie mozesz stawiac blokow podczas walki ponizej &e50 &7kratki'
+##########################################################################
+
+##########################################################################
+# Wlaczyc event PlayerInteractEvent ? (Odpowiada za blokowanie inventory)
+event-interact: true
+
+# Lista zablokowanych inventory
+######## Zmienne: ########
+# * "workbench"
+# * "ender_chest"
+# * "chest"
+###########################
+block-inventory:
+- 'workbench'
+- 'ender_chest'
+- 'chest'
+
+# Wiadomosc, gdy inventory jest zablokowane
+######## Zmienne: ########
+# * "{TYPE}" - workbench, ender_chest, chest
+###########################
+cannot-open-inventory: '&cNie mozesz otworzyc {TYPE}, poniewaz jest zablokowane!'
+##########################################################################
+
+##########################################################################
+# Czy ma byc automatycznie wylaczany fly podczas pvp?
+auto-disable-fly: false
+##########################################################################
